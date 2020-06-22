@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/reformat-scaperoom/precache-manifest.7c87dae57abdb0c75134fbea43c6ca37.js"
+  "/reformat-scaperoom/precache-manifest.b0da6aa66d6f3d1e88ae45b13c824775.js"
 );
 
 self.addEventListener('message', (event) => {
