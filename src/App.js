@@ -12,7 +12,7 @@ import FinalScreen from './components/FinalScreen/index';
 
 function App() {
   const [userInfo, setUserInfo] = useState(null);
-  const [currentGameNumber, setCurrentGameNumber] = useState(3);
+  const [currentGameNumber, setCurrentGameNumber] = useState(1);
 
   const handleGameFinish = () => {
     if (currentGameNumber < 5) {

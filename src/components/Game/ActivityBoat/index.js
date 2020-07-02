@@ -148,16 +148,6 @@ const ActivityBoat = ({ handleFinish }) => {
 
                     <div className="d-flex align-items-center">
                         <BoatImage direction={direction} peopleOnBoat={itemsSelected} />
-                        {/* {itemsSelected &&
-                            itemsSelected.map(item => (
-                                <img
-                                    key={item.id}
-                                    src={item.img}
-                                    style={{ height: 100, border: 'solid 3px' }}
-                                    className="m-2"
-                                />
-                            ))
-                        } */}
                     </div>
                     <Characters characters={secondColItems} clickable={direction === LEFT} handleClick={addSelectedItem} />
 
@@ -191,17 +181,6 @@ const Trip = ({ firstColItems, secondColItems, boatItems, direction }) => {
             <Characters characters={firstColItems} />
             <div className="ml-2">
                 <BoatImage direction={direction} style={{ border: 'solid 5px red' }} peopleOnBoat={boatItems} />
-                {/* // {boatItems &&
-                //     boatItems.map(item => (
-                //         <img
-                //             key={item.id}
-                //             src={item.img}
-                //             style={{ height: 100, border: 'solid 5px red' }}
-                //             className="m-2"
-                //         />
-                //     )
-                //     )
-                // } */}
             </div>
             <Characters characters={secondColItems} />
 
@@ -223,13 +202,6 @@ const Characters = ({ characters, clickable = false, handleClick }) => {
     )
 }
 
-// const BoatImage = ({ direction, style }) => (
-//     <img
-//         src={direction === RIGHT ? boatRightImg : boatLeftImg}
-//         style={style ? { ...style, height: 100 } : { height: 100 }}
-//         className="m-2"
-//     />
-// )
 
 const BoatImage = ({ direction, style, peopleOnBoat }) => (
     <div style={{ height: 120, ...style }} className="position-relative">
