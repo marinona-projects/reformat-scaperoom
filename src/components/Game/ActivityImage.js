@@ -1,13 +1,54 @@
-import React from 'react';
-import { Button, Input } from 'antd';
+import React, { useState } from 'react';
+import { Button, Input, Alert, Form } from 'antd';
+import img0 from '../../assets/images/activity-image/0.jpg';
+import img1 from '../../assets/images/activity-image/1.jpg';
+import img2 from '../../assets/images/activity-image/2.jpg';
+import img3 from '../../assets/images/activity-image/3.jpg';
+import img4 from '../../assets/images/activity-image/4.jpg';
 
-const ActivityImage = ({ handleFinish }) => {
+const images = [img0, img1, img2, img3, img4];
+
+const ActivityImage = ({ handleFinish, userNumber }) => {
+    const [showError, setShowError] = useState(false);
+
+    const handleFinalValidation = (responses) => {
+        if (responses.response.toLowerCase() === "altruisme social") handleFinish();
+        else setShowError(true);
+    }
     return (
-        <div className="d-flex align-items-center justify-content-center">
-            <img src="https://www.wikihow.com/images/thumb/4/40/Capture-21.jpg/339px-Capture-21.jpg" className="mb-2" />
-            <div className="ml-2">
-                <Input placeholder="Reposta" />
-                <Button onClick={handleFinish} className="mt-2">RESOLDRE PROVA 3</Button>
+        <div className="d-flex flex-column align-items-center">
+            <div className="d-flex align-items-center justify-content-center" style={{ width: '70%' }}>
+                <div style={{ flex: 1 }}>
+                    <img src={images[userNumber - 1]} className="mb-2 w-100" />
+                </div>
+                <div>
+                    {showError &&
+                        <Alert
+                            className="mx-4 mt-3"
+                            type={'error'}
+                            showIcon
+                            message="Resposta incorrecta!"
+                            closable
+                        />
+                    }
+                    <div style={{ flex: 1 }} className="ml-2">
+                        <Form
+                            name="mathProblemActivity"
+                            layout="inline"
+                            style={{ display: 'flex', alignItems: 'baseline' }}
+                            onFinish={handleFinalValidation}
+                        >
+                            <Form.Item
+                                name="response"
+                                label="Resposta"
+                                rules={[{ required: true, message: 'Introdueix la teva resposta!' }]}
+                            >
+                                <Input />
+                            </Form.Item>
+                            <Button className="mt-2 ml-3" htmlType="submit">RESOLDRE PROVA</Button>
+                        </Form>
+                    </div>
+                </div>
             </div>
         </div>
 

@@ -4,17 +4,26 @@ import './styles/bootstrap.min.css';
 import 'antd/dist/antd.css';
 
 import InitialForm from './components/InitialForm';
-import { Row, Col, Steps } from 'antd';
+import { Row, Col, Steps, Modal } from 'antd';
 import Header from './components/Header';
 import Game from './components/Game/index';
-import FinalScreen from './components/FinalScreen';
+import FinalScreen from './components/FinalScreen/index';
+
 
 function App() {
   const [userInfo, setUserInfo] = useState(null);
-  const [currentGameNumber, setCurrentGameNumber] = useState(1);
+  const [currentGameNumber, setCurrentGameNumber] = useState(3);
 
   const handleGameFinish = () => {
-    if (currentGameNumber < 4) setCurrentGameNumber(currentGameNumber + 1);
+    if (currentGameNumber < 5) {
+      Modal.success({
+        content: 'Prova superada!',
+        okText: "Segueix",
+        onOk() {
+          setCurrentGameNumber(currentGameNumber + 1);
+        },
+      });
+    }
   }
 
   return (
@@ -22,22 +31,27 @@ function App() {
       {userInfo &&
         <>
           <Header {...userInfo} />
-          {currentGameNumber < 4 ?
+          {currentGameNumber < 5 ?
             <>
               <Row>
                 <Col span={18} offset={3}>
                   <Steps current={currentGameNumber - 1}>
-                    <Steps.Step title="Prova 1" description="Descripció..." />
-                    <Steps.Step title="Prova 2" subTitle="subtitol" description="This is a description." />
-                    <Steps.Step title="Prova 3" description="This is a description." />
-                    <Steps.Step title="Completat!" description="This is a description." />
+                    <Steps.Step
+                      title="Pis 1"
+                    // subTitle="subtitol"
+                    // description="Descripció..." 
+                    />
+                    <Steps.Step title="Pis 2" />
+                    <Steps.Step title="Pis 3" />
+                    <Steps.Step title="Pis 4" />
+                    <Steps.Step title="Completat!" />
                     {/* <Steps.Step title="Final!" description="This is a description." /> */}
                   </Steps>
                 </Col>
               </Row>
-              <Game numGame={currentGameNumber} handleFinish={handleGameFinish} />
+              <Game numGame={currentGameNumber} handleFinish={handleGameFinish} userNumber={userInfo && userInfo.player} />
             </>
-            : <FinalScreen />
+            : <FinalScreen userName={userInfo && userInfo.name} />
           }
         </>
       }
