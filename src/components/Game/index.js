@@ -13,9 +13,11 @@ const activities = [
 
     },
     {
-        desc: `Heu aconseguit passar al segon pis de la missió, felicitats! \r\n
-        Quin text més llarg... l'haurem de llegir per saber què hem de fer?... Té pinta que si... Potser compartir la informació que ens proporcionen ens ajuda a trobar la solució adient. Recordeu que es tracta de treballar en equip, no que part de l'equip ho solucioni i l'altra part copiï la resposta... el GameMaster us observa...
-        `,
+        desc: `Heu aconseguit passar al segon pis de la missió.\r\n
+        Que voldrà dir aquesta gràfica? I quin text més llarg, l'haurem de llegir per saber que hem de fer? ...
+        Té pinta que si... Potser compartir la informació que ens proporcionen entre tots els membres de l'equip ens
+        ajuda a trobar la solució adient. Recordeu que es tracta de treballar en equip, no que part de l'equip ho
+        solucioni i l'altra part copiï... el GameMaster us observa...`,
 
     },
     {
