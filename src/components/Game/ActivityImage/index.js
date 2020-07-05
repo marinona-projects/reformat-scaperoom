@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
 import { Button, Input, Alert, Form } from 'antd';
-import img0 from '../../assets/images/activity-image/0.jpg';
-import img1 from '../../assets/images/activity-image/1.jpg';
-import img2 from '../../assets/images/activity-image/2.jpg';
-import img3 from '../../assets/images/activity-image/3.jpg';
-import img4 from '../../assets/images/activity-image/4.jpg';
+import img0 from '../../../assets/images/activity-image/0.jpg';
+import img1 from '../../../assets/images/activity-image/1.jpg';
+import img2 from '../../../assets/images/activity-image/2.jpg';
+import img3 from '../../../assets/images/activity-image/3.jpg';
+import img4 from '../../../assets/images/activity-image/4.jpg';
+import { solutions } from './data';
 
 const images = [img0, img1, img2, img3, img4];
 
@@ -12,7 +13,9 @@ const ActivityImage = ({ handleFinish, userNumber }) => {
     const [showError, setShowError] = useState(false);
 
     const handleFinalValidation = (responses) => {
-        if (responses.response.toLowerCase() === "altruisme social") handleFinish();
+        const resp = responses.response.toLowerCase().trim();
+
+        if (solutions.includes(resp)) handleFinish();
         else setShowError(true);
     }
     return (
