@@ -1,7 +1,7 @@
 import React from 'react';
 import ActivityOrderImages from './ActivityOrderImages/index';
 import ActivityBoat from './ActivityBoat/index';
-import ActivityMathProblem from './ActivityMathProblem';
+import ActivityMathProblem from './ActivityMathProblem/index';
 import ActivityImage from './ActivityImage/index';
 
 const activities = [
