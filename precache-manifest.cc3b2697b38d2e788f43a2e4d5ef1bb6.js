@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "62515ab8af06409115a98ef6c5af9f7e",
+    "revision": "9e1d8ff92c098931441505dddd27a0c2",
     "url": "/reformat-scaperoom/index.html"
   },
   {
@@ -8,7 +8,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/reformat-scaperoom/static/css/2.001b80d1.chunk.css"
   },
   {
-    "revision": "0e99b7b5ee0348517245",
+    "revision": "7545d985309ec388b8b1",
     "url": "/reformat-scaperoom/static/css/main.867f95c9.chunk.css"
   },
   {
@@ -20,8 +20,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/reformat-scaperoom/static/js/2.4992c162.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "0e99b7b5ee0348517245",
-    "url": "/reformat-scaperoom/static/js/main.917f0099.chunk.js"
+    "revision": "7545d985309ec388b8b1",
+    "url": "/reformat-scaperoom/static/js/main.cf5e0d4b.chunk.js"
   },
   {
     "revision": "f724e4de2e5d52f99a20",
