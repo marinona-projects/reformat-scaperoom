@@ -6,8 +6,6 @@ import kidImg from '../../../assets/images/activity-boat/kid.png';
 import healthyImg from '../../../assets/images/activity-boat/healthy.png';
 import sickImg from '../../../assets/images/activity-boat/sick.png';
 import doctorImg from '../../../assets/images/activity-boat/doctor.png';
-import boatRightImg from '../../../assets/images/activity-boat/boat-right.png';
-import boatLeftImg from '../../../assets/images/activity-boat/boat-left.png';
 import boatImg from '../../../assets/images/activity-boat/boat/boat.png';
 import boatSickImg from '../../../assets/images/activity-boat/boat/sick.png';
 import boatKidImg from '../../../assets/images/activity-boat/boat/kid.png';
@@ -204,20 +202,20 @@ const Characters = ({ characters, clickable = false, handleClick }) => {
 
 
 const BoatImage = ({ direction, style, peopleOnBoat }) => (
-    <div style={{ height: 120, ...style }} className="position-relative">
-        <div className=" pt-3">
+    <div style={{ ...style }} className="position-relative">
+        <div className=" ">
             <img
                 src={boatImg}
-                style={{ height: 100, zIndex: 0 }}
-                className={`${direction == LEFT ? 'flipImage' : ''}`}
+                style={{ height: 150, zIndex: 0 }}
+                className={`${direction == RIGHT ? 'flipImage' : ''}`}
             />
         </div>
         {peopleOnBoat && peopleOnBoat.map(p =>
-            <div className="position-absolute pt-3" style={{ top: 0 }}>
+            <div className="position-absolute" style={{ top: 0 }}>
                 <img
                     src={p.boatImg}
-                    style={{ height: 100, zIndex: 1 }}
-                    className={`${direction == LEFT ? 'flipImage' : ''}`}
+                    style={{ height: 150, zIndex: 1 }}
+                    className={`${direction == RIGHT ? 'flipImage' : ''}`}
                 />
             </div>
         )}
