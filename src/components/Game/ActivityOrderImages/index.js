@@ -170,6 +170,7 @@ const ImageDescription = ({ img, highlighted, selectedImages, showSizes }) => (
                     imagesInfo.find(i => i.id === selectedImages[img.id]).srcWithNumber
                     : imagesInfo.find(i => i.id === selectedImages[img.id]).src
                 }
+                alt={imagesInfo.find(i => i.id === selectedImages[img.id]).name}
                 className="w-100"
             />
             : highlighted && <p>{img.desc}</p>
@@ -181,7 +182,7 @@ const ImageButton = ({ imgId, handleClick }) => {
     const imgInfo = imagesInfo.find(img => img.id === imgId);
     return (
         <Button onClick={() => handleClick(imgInfo.id)} className="m-2 p-1" style={{ height: 150 }}>
-            <img src={imgInfo.src} className="h-100" />
+            <img src={imgInfo.src} alt={imgInfo.name} className="h-100" />
         </Button>
     )
 }

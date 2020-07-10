@@ -16,7 +16,7 @@ const ActivityMathProblem = ({ handleFinish }) => {
         <div className="d-flex p-2" style={{ marginRight: '4rem', marginLeft: '4rem', backgroundColor: '#f3f3f3' }}>
             {/* <CoronavirusGraphic /> */}
             <div style={{ flex: 2 }}>
-                <img src={coronavirusGraphicImg} className="w-100" />
+                <img src={coronavirusGraphicImg} alt="gràfica coronavirus" className="w-100" />
                 <small>
                     {`Font de la gràfica i part del text: `}
                     <a href="https://www.capgros.com/mataro/salut/evolucio-coronavirus-hospital-mataro-600-casos-mes_723648_102.html" target="_blank">

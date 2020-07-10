@@ -22,7 +22,7 @@ const ActivityImage = ({ handleFinish, userNumber }) => {
         <div className="d-flex flex-column align-items-center">
             <div className="d-flex align-items-center justify-content-center flex-column" style={{ width: '70%' }}>
                 <div style={{ flex: 1 }}>
-                    <img src={images[userNumber - 1]} className="mb-2 w-100" />
+                    <img src={images[userNumber - 1]} alt="graella amb paraules" className="mb-2 w-100" />
                 </div>
                 <div>
                     {showError &&

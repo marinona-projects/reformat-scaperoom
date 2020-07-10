@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Button, Select, Form, Alert } from 'antd';
+import { Button } from 'antd';
 import '../../../styles/generalStyles.css';
 
 import kidImg from '../../../assets/images/activity-boat/kid.png';
@@ -21,23 +21,31 @@ const options = [{
     id: 'kid',
     name: 'Nen',
     img: kidImg,
-    boatImg: boatKidImg
+    imgAlt: 'nen',
+    boatImg: boatKidImg,
+    boatImgAlt: 'nen dins de la barca',
 }, {
     id: 'sick',
     name: 'Infectat',
     img: sickImg,
-    boatImg: boatSickImg
+    imgAlt: 'home malalt',
+    boatImg: boatSickImg,
+    boatImgAlt: 'home malalt dins de la barca',
 }, {
     id: 'healthy',
     name: 'Sa',
     img: healthyImg,
-    boatImg: boatHealthyImg
+    imgAlt: 'dona sana',
+    boatImg: boatHealthyImg,
+    boatImgAlt: 'dona sana dins de la barca',
 },
 {
     id: 'doctor',
     name: 'Doctora',
     img: doctorImg,
-    boatImg: boatDoctorImg
+    imgAlt: 'doctor',
+    boatImg: boatDoctorImg,
+    boatImgAlt: 'doctor dins de la barca',
 }
 ];
 
@@ -192,9 +200,9 @@ const Characters = ({ characters, clickable = false, handleClick }) => {
             {characters.map(i =>
                 clickable ?
                     <Button onClick={() => handleClick(i.id)} className="m-2 p-1 characterImg">
-                        <img key={i.id} src={i.img} className="h-100" />
+                        <img key={i.id} src={i.img} alt={i.imgAlt} className="h-100" />
                     </Button>
-                    : <img key={i.id} src={i.img} className="m-2 characterImg" />
+                    : <img key={i.id} src={i.img} alt={i.imgAlt} className="m-2 characterImg" />
             )}
         </div>
     )
@@ -206,6 +214,7 @@ const BoatImage = ({ direction, style, peopleOnBoat }) => (
         <div className=" ">
             <img
                 src={boatImg}
+                alt='barca'
                 style={{ height: 150, zIndex: 0 }}
                 className={`${direction == RIGHT ? 'flipImage' : ''}`}
             />
@@ -214,6 +223,7 @@ const BoatImage = ({ direction, style, peopleOnBoat }) => (
             <div className="position-absolute" style={{ top: 0 }}>
                 <img
                     src={p.boatImg}
+                    alt={p.boatImgAlt}
                     style={{ height: 150, zIndex: 1 }}
                     className={`${direction == RIGHT ? 'flipImage' : ''}`}
                 />
