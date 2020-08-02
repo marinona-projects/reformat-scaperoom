@@ -7,7 +7,7 @@ const Header = ({ name, player }) => (
     <PageHeader
         title={name}
         subTitle={`(Jugador número ${player})`}
-        avatar={{ style: { backgroundColor: '#87d068' }, icon: <UserOutlined /> }}
+        avatar={{ style: { backgroundColor: '#2a3f5d' }, icon: <UserOutlined /> }}
     >
         <img src={logoImg} alt="logo Reforma't Scaperoom" style={{ width: '20%' }} />
     </PageHeader>

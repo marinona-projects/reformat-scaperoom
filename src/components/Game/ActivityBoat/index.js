@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { Button } from 'antd';
-import '../../../styles/generalStyles.css';
 
 import kidImg from '../../../assets/images/activity-boat/kid.png';
 import healthyImg from '../../../assets/images/activity-boat/healthy.png';

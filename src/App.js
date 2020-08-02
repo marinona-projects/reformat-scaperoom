@@ -2,12 +2,13 @@ import React, { useState } from 'react';
 import './App.css';
 import './styles/bootstrap.min.css';
 import 'antd/dist/antd.css';
+import './styles/generalStyles.scss';
 
-import InitialForm from './components/InitialForm';
 import { Row, Col, Steps, Modal } from 'antd';
 import Header from './components/Header';
 import Game from './components/Game/index';
 import FinalScreen from './components/FinalScreen/index';
+import InitialForm from './components/InitialForm/InitialForm';
 
 
 function App() {

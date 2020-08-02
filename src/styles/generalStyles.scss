@@ -1,0 +1,29 @@
+$primaryColor: #fbb03b;
+$secondaryColor: #2a3f5d;
+
+body{
+  font-family: Consolas;
+}
+
+.flipImage{
+    -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
+}
+
+button{
+  background-color: $primaryColor !important;
+  border-color: $primaryColor !important;
+  &:hover, &:focus{
+    color: #f5f5f5 !important;
+  }
+}
+
+.ant-steps-item-process .ant-steps-item-icon{
+  background-color: $primaryColor;
+  background: $primaryColor;
+  border-color: $primaryColor;
+}
+
+.round{
+  border-radius: 100%;
+}
