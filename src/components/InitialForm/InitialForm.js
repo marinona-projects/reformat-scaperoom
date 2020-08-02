@@ -56,7 +56,7 @@ const InitialForm = ({ onSubmit }) => (
                 label="Nom complet"
                 name="name"
                 rules={[{ required: true, message: 'Introdueix el teu nom!' }]}
-                initialValue='Marina'
+            // initialValue='Marina'
             >
                 <Input />
             </Form.Item>
@@ -72,7 +72,7 @@ const InitialForm = ({ onSubmit }) => (
                     },
                 }),
                 ]}
-                initialValue={2}
+            // initialValue={2}
             >
                 <InputNumber min={1} max={5} />
             </Form.Item>

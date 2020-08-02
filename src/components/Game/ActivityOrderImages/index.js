@@ -54,7 +54,7 @@ const ActivityOrderImages = ({ handleFinish }) => {
 
 
     return (
-        <div className={`activityContainer ${gameStep === OPERATION ? 'operation' : ''}`}>
+        <div className={`py-4 activityContainer ${gameStep === OPERATION ? 'operation' : ''}`}>
             {gameStep === SELECT_IMAGES && (
                 showError ?
                     <Alert

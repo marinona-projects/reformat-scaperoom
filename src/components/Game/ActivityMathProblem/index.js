@@ -13,7 +13,7 @@ const ActivityMathProblem = ({ handleFinish }) => {
     }
     return (
         // <div className="d-flex align-items-center justify-content-center">
-        <div className="d-flex p-2" style={{ marginRight: '4rem', marginLeft: '4rem', backgroundColor: '#f3f3f3' }}>
+        <div className="d-flex p-2" style={{ marginRight: '4rem', marginLeft: '4rem', backgroundColor: '#d8e8e8' }}>
             {/* <CoronavirusGraphic /> */}
             <div style={{ flex: 2 }}>
                 <img src={coronavirusGraphicImg} alt="gràfica coronavirus" className="w-100" />
