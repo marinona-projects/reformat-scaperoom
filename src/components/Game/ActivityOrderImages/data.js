@@ -28,6 +28,7 @@ export const imagesInfo = [
         operation: "·",
         src: img0,
         srcWithNumber: img0_wn,
+        value: "0,012 mm",
         response: 12,
         initialValue: undefined
     },
@@ -38,6 +39,7 @@ export const imagesInfo = [
         operation: "-",
         src: img1,
         srcWithNumber: img1_wn,
+        value: "0,07µm",
         response: 0.07,
         initialValue: 0.07
     },
@@ -48,6 +50,7 @@ export const imagesInfo = [
         operation: "+",
         src: img2,
         srcWithNumber: img2_wn,
+        value: "6x106 pm",
         response: 6,
         initialValue: undefined
     },
@@ -58,6 +61,7 @@ export const imagesInfo = [
         operation: "·",
         src: img3,
         srcWithNumber: img3_wn,
+        value: "0,0021 cm",
         response: 210000,
         initialValue: undefined
     },
@@ -68,6 +72,7 @@ export const imagesInfo = [
         operation: "/",
         src: img4,
         srcWithNumber: img4_wn,
+        value: "6,4nm",
         response: 0.0064,
         initialValue: undefined
     },
@@ -78,6 +83,7 @@ export const imagesInfo = [
         operation: "=",
         src: img5,
         srcWithNumber: img5_wn,
+        value: "0,00008 dm",
         response: 8,
         initialValue: undefined
     },
