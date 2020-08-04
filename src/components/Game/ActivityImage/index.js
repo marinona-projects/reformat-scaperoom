@@ -6,6 +6,7 @@ import img2 from '../../../assets/images/activity-image/2.jpg';
 import img3 from '../../../assets/images/activity-image/3.jpg';
 import img4 from '../../../assets/images/activity-image/4.jpg';
 import { solutions } from './data';
+import './styles.scss'
 
 const images = [img0, img1, img2, img3, img4];
 
@@ -19,7 +20,7 @@ const ActivityImage = ({ handleFinish, userNumber }) => {
         else setShowError(true);
     }
     return (
-        <div className="d-flex flex-column align-items-center">
+        <div className="d-flex flex-column align-items-center activityContainer py-3">
             <div className="d-flex align-items-center justify-content-center flex-column" style={{ width: '70%' }}>
                 <div style={{ flex: 1 }}>
                     <img src={images[userNumber - 1]} alt="graella amb paraules" className="mb-2 w-100" />

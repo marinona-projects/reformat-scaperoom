@@ -54,7 +54,7 @@ const ActivityOrderImages = ({ handleFinish }) => {
 
 
     return (
-        <div className={`py-4 activityContainer ${gameStep === OPERATION ? 'operation' : ''}`}>
+        <div className={`py-4 ${gameStep === OPERATION ? 'activityContainerOperation' : ''}`}>
             {gameStep === SELECT_IMAGES && (
                 showError ?
                     <Alert
@@ -91,20 +91,22 @@ const ActivityOrderImages = ({ handleFinish }) => {
                         <div className="d-flex align-items-center flex-row mb-4">
                             {imagesInfo.map(img =>
                                 <span key={img.id} className="d-flex align-items-center" style={{ flex: 1 }} >
-                                    <Form.Item
-                                        style={{ flex: 1 }}
-                                        className="m-0"
-                                        name={`number_${img.id}`}
-                                        rules={[{ required: true, message: 'Introdueix una resposta!' }]}
-                                        validateStatus={
-                                            validationErrors[img.id]
-                                                ? 'error'
-                                                : 'success'
-                                        }
-                                        initialValue={img.initialValue}
-                                    >
-                                        <InputNumber decimalSeparator=',' step={0.0001} />
-                                    </Form.Item>
+                                    <div className="d-flex flex-column align-items-center" style={{ flex: 4 }}>
+                                        <Form.Item
+                                            className="m-0"
+                                            name={`number_${img.id}`}
+                                            rules={[{ required: true, message: 'Introdueix una resposta!' }]}
+                                            validateStatus={
+                                                validationErrors[img.id]
+                                                    ? 'error'
+                                                    : 'success'
+                                            }
+                                            initialValue={img.initialValue}
+                                        >
+                                            <InputNumber decimalSeparator=',' step={0.0001} />
+                                        </Form.Item>
+                                        <span className="ml-2">µm</span>
+                                    </div>
                                     <div className="p-2 font-weight-bold d-flex" style={{ fontSize: '36px' }}>{img.operation}</div>
                                 </span>
                             )}
@@ -144,6 +146,8 @@ const ImageDescription = ({ img, highlighted, selectedImages, showSizes }) => {
     const showImage = img.id < selectedImages.length;
     const actImage = imagesInfo.find(i => i.id === selectedImages[img.id]);
 
+    console.log("actImage: ", actImage)
+
     return (
         <div
             style={{ backgroundColor: highlighted ? '#FFF8ED' : 'white' }}
@@ -151,23 +155,25 @@ const ImageDescription = ({ img, highlighted, selectedImages, showSizes }) => {
         >
             {showImage ?
                 (showSizes ?
-                    <div className="cellWithOverlay">
+                    <>
                         <img
                             src={actImage.src}
                             alt={actImage.name}
                             className="w-100"
                         />
-                        {/* <div class="overlay w-100">
-                            <div class="text">{actImage.name}</div>
-                        </div> */}
-                    </div>
+                        <div className="overlay round d-flex align-items-center">
+                            <div class="text w-100 text-center">
+                                <p>{actImage.name}</p>
+                                <p>{actImage.value}</p>
+                            </div>
+                        </div>
+                    </>
                     : <img
                         src={actImage.src}
                         alt={actImage.name}
                         className="w-100 round"
                     />
                 )
-
                 : highlighted && <p className="w-100 text-center">{img.desc}</p>
             }
         </div>

@@ -3,6 +3,7 @@ import _ from 'lodash';
 import { Button, Form, InputNumber, Alert } from 'antd';
 import coronavirusGraphicImg from '../../../assets/images/activity-math-problem/graphicScreenshot.png';
 import { mathProblemText, solutions } from './data';
+import './styles.scss';
 
 const ActivityMathProblem = ({ handleFinish }) => {
     const [showError, setShowError] = useState(false);
@@ -12,8 +13,7 @@ const ActivityMathProblem = ({ handleFinish }) => {
         else setShowError(true);
     }
     return (
-        // <div className="d-flex align-items-center justify-content-center">
-        <div className="d-flex p-2" style={{ marginRight: '4rem', marginLeft: '4rem', backgroundColor: '#d8e8e8' }}>
+        <div className="d-flex p-2 activityContainer">
             {/* <CoronavirusGraphic /> */}
             <div style={{ flex: 2 }}>
                 <img src={coronavirusGraphicImg} alt="gràfica coronavirus" className="w-100" />
