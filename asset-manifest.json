@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/reformat-scaperoom/static/css/main.a33d512c.chunk.css",
-    "main.js": "/reformat-scaperoom/static/js/main.2e51fd53.chunk.js",
+    "main.css": "/reformat-scaperoom/static/css/main.d3f89e44.chunk.css",
+    "main.js": "/reformat-scaperoom/static/js/main.8aa3a218.chunk.js",
     "runtime-main.js": "/reformat-scaperoom/static/js/runtime-main.bef737e7.js",
     "static/css/2.001b80d1.chunk.css": "/reformat-scaperoom/static/css/2.001b80d1.chunk.css",
-    "static/js/2.68432165.chunk.js": "/reformat-scaperoom/static/js/2.68432165.chunk.js",
+    "static/js/2.10fc02e3.chunk.js": "/reformat-scaperoom/static/js/2.10fc02e3.chunk.js",
     "index.html": "/reformat-scaperoom/index.html",
-    "precache-manifest.fa806b1bb81ba82f34deb31f1db31a80.js": "/reformat-scaperoom/precache-manifest.fa806b1bb81ba82f34deb31f1db31a80.js",
+    "precache-manifest.d531176d737b46e939951ffa33859ae3.js": "/reformat-scaperoom/precache-manifest.d531176d737b46e939951ffa33859ae3.js",
     "service-worker.js": "/reformat-scaperoom/service-worker.js",
-    "static/js/2.68432165.chunk.js.LICENSE.txt": "/reformat-scaperoom/static/js/2.68432165.chunk.js.LICENSE.txt",
+    "static/js/2.10fc02e3.chunk.js.LICENSE.txt": "/reformat-scaperoom/static/js/2.10fc02e3.chunk.js.LICENSE.txt",
     "static/media/0.jpg": "/reformat-scaperoom/static/media/0.75c96f45.jpg",
     "static/media/0wn.jpg": "/reformat-scaperoom/static/media/0wn.5fed379c.jpg",
     "static/media/1.jpg": "/reformat-scaperoom/static/media/1.6309c1dc.jpg",
@@ -27,7 +27,7 @@
     "static/media/doctor.png": "/reformat-scaperoom/static/media/doctor.e2dfdd4f.png",
     "static/media/graphicScreenshot.png": "/reformat-scaperoom/static/media/graphicScreenshot.9ace9b25.png",
     "static/media/healthy.png": "/reformat-scaperoom/static/media/healthy.24f4c7b5.png",
-    "static/media/kid.png": "/reformat-scaperoom/static/media/kid.0ce19381.png",
+    "static/media/kid.png": "/reformat-scaperoom/static/media/kid.3f771aa6.png",
     "static/media/logo.jpg": "/reformat-scaperoom/static/media/logo.fdeb1907.jpg",
     "static/media/missionCompleted.png": "/reformat-scaperoom/static/media/missionCompleted.de5206f9.png",
     "static/media/sick.png": "/reformat-scaperoom/static/media/sick.8236b2ec.png"
@@ -35,8 +35,8 @@
   "entrypoints": [
     "static/js/runtime-main.bef737e7.js",
     "static/css/2.001b80d1.chunk.css",
-    "static/js/2.68432165.chunk.js",
-    "static/css/main.a33d512c.chunk.css",
-    "static/js/main.2e51fd53.chunk.js"
+    "static/js/2.10fc02e3.chunk.js",
+    "static/css/main.d3f89e44.chunk.css",
+    "static/js/main.8aa3a218.chunk.js"
   ]
 }
