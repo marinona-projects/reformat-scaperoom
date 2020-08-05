@@ -1,27 +1,27 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "8778be6a91856e41968a8daef78aee20",
+    "revision": "87447efa5e6960591b2d73b7d190b7aa",
     "url": "/reformat-scaperoom/index.html"
   },
   {
-    "revision": "d46624a1f0d061e9ed15",
+    "revision": "b997a6ac8fb47fbc63d2",
     "url": "/reformat-scaperoom/static/css/2.001b80d1.chunk.css"
   },
   {
-    "revision": "08dda5d84c25d717cf6b",
+    "revision": "77c31dd5b82df0111624",
     "url": "/reformat-scaperoom/static/css/main.d3f89e44.chunk.css"
   },
   {
-    "revision": "d46624a1f0d061e9ed15",
-    "url": "/reformat-scaperoom/static/js/2.10fc02e3.chunk.js"
+    "revision": "b997a6ac8fb47fbc63d2",
+    "url": "/reformat-scaperoom/static/js/2.e38134ac.chunk.js"
   },
   {
     "revision": "478f66cd406f1e2ad0d7196cca26ab18",
-    "url": "/reformat-scaperoom/static/js/2.10fc02e3.chunk.js.LICENSE.txt"
+    "url": "/reformat-scaperoom/static/js/2.e38134ac.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "08dda5d84c25d717cf6b",
-    "url": "/reformat-scaperoom/static/js/main.8aa3a218.chunk.js"
+    "revision": "77c31dd5b82df0111624",
+    "url": "/reformat-scaperoom/static/js/main.aa9ef134.chunk.js"
   },
   {
     "revision": "f724e4de2e5d52f99a20",
@@ -96,16 +96,20 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/reformat-scaperoom/static/media/5wn.9099c02d.jpg"
   },
   {
+    "revision": "d8b061df306fe7b6eef211321e3c1c9e",
+    "url": "/reformat-scaperoom/static/media/Varta-Light.d8b061df.ttf"
+  },
+  {
+    "revision": "7f629b5586ad4dcc5b0160dce7a0ff4e",
+    "url": "/reformat-scaperoom/static/media/Varta-SemiBold.7f629b55.ttf"
+  },
+  {
+    "revision": "cd0795a552d45e64de8419c8c17559b1",
+    "url": "/reformat-scaperoom/static/media/bg.cd0795a5.png"
+  },
+  {
     "revision": "9812a53b3faf76cec88272ad27819aef",
     "url": "/reformat-scaperoom/static/media/boat.9812a53b.png"
-  },
-  {
-    "revision": "21c7b4606c6225eb1b52236305b34ad3",
-    "url": "/reformat-scaperoom/static/media/diplomaDecoration.21c7b460.png"
-  },
-  {
-    "revision": "a12cfdb94d7bc23424a96cd01e001842",
-    "url": "/reformat-scaperoom/static/media/diplomaDecoration2.a12cfdb9.png"
   },
   {
     "revision": "e2dfdd4f76be8f955527bf0654882a05",
