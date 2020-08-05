@@ -1,16 +1,19 @@
 import React, { useState } from 'react';
-import _ from 'lodash';
+import _, { first } from 'lodash';
 import { Button, Form, InputNumber, Alert } from 'antd';
 import coronavirusGraphicImg from '../../../assets/images/activity-math-problem/graphicScreenshot.png';
 import { mathProblemText, solutions } from './data';
 import './styles.scss';
 
 const ActivityMathProblem = ({ handleFinish }) => {
-    const [showError, setShowError] = useState(false);
+    const [validationErrors, setValidationErrors] = useState([false, false]);
 
     const handleFinalValidation = (responses) => {
-        if (_.isEqual(responses, solutions)) handleFinish();
-        else setShowError(true);
+        const firstFieldError = !(responses.doubleBeds === solutions.doubleBeds);
+        const secondFieldError = !(responses.simpleBeds === solutions.simpleBeds);
+
+        setValidationErrors([firstFieldError, secondFieldError]);
+        if (!firstFieldError && !secondFieldError) handleFinish();
     }
     return (
         <div className="d-flex p-2 activityContainer">
@@ -26,27 +29,22 @@ const ActivityMathProblem = ({ handleFinish }) => {
             </div>
             <div className="ml-2 d-flex flex-column" style={{ flex: 4 }}>
                 <p className="text-justify" style={{ whiteSpace: 'pre-line' }}>{mathProblemText}</p>
-                {showError &&
-                    <Alert
-                        className="mx-4 mt-3"
-                        type={'error'}
-                        showIcon
-                        message="Resposta incorrecta!"
-                        closable
-                    />
-                }
 
-                <div className='d-flex'>
+                <div className='d-flex flex-column align-items-center'>
                     <Form
                         name="mathProblemActivity"
-                        layout="inline"
-                        style={{ display: 'flex', alignItems: 'baseline' }}
+                        layout="horizontal"
                         onFinish={handleFinalValidation}
                     >
                         <Form.Item
                             name="doubleBeds"
                             label="Habitacions dobles"
                             rules={[{ required: true, message: 'Introdueix la teva resposta!' }]}
+                            validateStatus={
+                                validationErrors[0]
+                                    ? 'error'
+                                    : 'success'
+                            }
                         >
                             <InputNumber />
                         </Form.Item>
@@ -54,10 +52,15 @@ const ActivityMathProblem = ({ handleFinish }) => {
                             name="simpleBeds"
                             label="Habitacions simples"
                             rules={[{ required: true, message: 'Introdueix la teva resposta!' }]}
+                            validateStatus={
+                                validationErrors[1]
+                                    ? 'error'
+                                    : 'success'
+                            }
                         >
                             <InputNumber />
                         </Form.Item>
-                        <Button className="mt-2 ml-3" htmlType="submit">RESOLDRE PROVA</Button>
+                        <Button className="mb-2 ml-3" htmlType="submit">RESOLDRE PROVA</Button>
                     </Form>
                 </div>
             </div>

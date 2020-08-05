@@ -80,7 +80,7 @@ const ActivityBoat = ({ handleFinish }) => {
         ])
 
         if (itemsSelected) {
-            if (direction == RIGHT) {
+            if (direction === RIGHT) {
                 setFirstColItems(firstColItems.filter(i => !selectedOpts.includes(i.id)))
                 setSecondColItems([...secondColItems, ...itemsSelected])
             } else {
@@ -122,7 +122,7 @@ const ActivityBoat = ({ handleFinish }) => {
         if (itemsSelected.find(item => item.id === itemId)) {
             setItemsSelected(itemsSelected.filter(item => item.id !== itemId))
         } else {
-            const item = options.find(o => o.id == itemId)
+            const item = options.find(o => o.id === itemId)
             setItemsSelected([...itemsSelected, item])
         }
     }
@@ -167,7 +167,7 @@ const ActivityBoat = ({ handleFinish }) => {
                     <Button onClick={() => resetGame()}>Reset</Button>
                     {showFinalButton &&
                         <Button type="primary" onClick={handleFinalValidation} className="ml-2">
-                            Comprova resposta
+                            RESOLDRE PROVA
                         </Button>
                     }
                 </div>
@@ -215,7 +215,7 @@ const BoatImage = ({ direction, style, peopleOnBoat }) => (
                 src={boatImg}
                 alt='barca'
                 style={{ height: 150, zIndex: 0 }}
-                className={`${direction == RIGHT ? 'flipImage' : ''}`}
+                className={`${direction === RIGHT ? 'flipImage' : ''}`}
             />
         </div>
         {peopleOnBoat && peopleOnBoat.map(p =>
@@ -224,7 +224,7 @@ const BoatImage = ({ direction, style, peopleOnBoat }) => (
                     src={p.boatImg}
                     alt={p.boatImgAlt}
                     style={{ height: 150, zIndex: 1 }}
-                    className={`${direction == RIGHT ? 'flipImage' : ''}`}
+                    className={`${direction === RIGHT ? 'flipImage' : ''}`}
                 />
             </div>
         )}

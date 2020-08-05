@@ -47,7 +47,7 @@ const ActivityOrderImages = ({ handleFinish }) => {
         });
         setValidationErrors(validationErr);
         setValidationFinalError(responses.finalSolution !== correctSolution);
-        if (!someError && responses.finalSolution == correctSolution) handleFinish();
+        if (!someError && responses.finalSolution === correctSolution) handleFinish();
     }
 
     const highlightedItem = selectedImages.length;
