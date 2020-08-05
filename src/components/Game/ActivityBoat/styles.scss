@@ -1,0 +1,38 @@
+
+$backgroundColor: #d8e8e8;
+$darkBg: #9eb8b8;
+
+
+.boatActivityContainer{
+    background-color: $backgroundColor;
+}
+
+.characterImg{
+    height: 120px;
+
+    &.characterButton{
+        border: 3px solid #fbb03b;
+        background-color: white !important;
+    
+        &:hover{
+            background-color: #f7ce8f !important;
+        }
+    }
+}
+
+.charactersContainer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 400px;
+    min-height: 150px;
+
+    &.clickable{
+        background-color: white;
+    }
+
+    &:not(.clickable){
+        background-color: $darkBg;
+    }
+}
+

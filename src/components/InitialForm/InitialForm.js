@@ -1,5 +1,5 @@
 import React from 'react';
-import { Input, Button, Form, Layout, InputNumber, List } from 'antd';
+import { Input, Button, Form, InputNumber, List } from 'antd';
 import logoImg from '../../assets/images/logos/logo.jpg';
 import { CameraOutlined, CommentOutlined, ClockCircleOutlined } from '@ant-design/icons'
 import './styles.css'

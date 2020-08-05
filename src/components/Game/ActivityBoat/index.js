@@ -1,52 +1,11 @@
 import React, { useState } from 'react';
 import { Button } from 'antd';
 
-import kidImg from '../../../assets/images/activity-boat/kid.png';
-import healthyImg from '../../../assets/images/activity-boat/healthy.png';
-import sickImg from '../../../assets/images/activity-boat/sick.png';
-import doctorImg from '../../../assets/images/activity-boat/doctor.png';
 import boatImg from '../../../assets/images/activity-boat/boat/boat.png';
-import boatSickImg from '../../../assets/images/activity-boat/boat/sick.png';
-import boatKidImg from '../../../assets/images/activity-boat/boat/kid.png';
-import boatHealthyImg from '../../../assets/images/activity-boat/boat/healthy.png';
-import boatDoctorImg from '../../../assets/images/activity-boat/boat/doctor.png';
 import ErrorsAlert from './ErrorsAlert';
 
-import './styles.css'
-
-const RIGHT = 'RIGHT';
-const LEFT = 'LEFT';
-const options = [{
-    id: 'kid',
-    name: 'Nen',
-    img: kidImg,
-    imgAlt: 'nen',
-    boatImg: boatKidImg,
-    boatImgAlt: 'nen dins de la barca',
-}, {
-    id: 'sick',
-    name: 'Infectat',
-    img: sickImg,
-    imgAlt: 'home malalt',
-    boatImg: boatSickImg,
-    boatImgAlt: 'home malalt dins de la barca',
-}, {
-    id: 'healthy',
-    name: 'Sa',
-    img: healthyImg,
-    imgAlt: 'dona sana',
-    boatImg: boatHealthyImg,
-    boatImgAlt: 'dona sana dins de la barca',
-},
-{
-    id: 'doctor',
-    name: 'Doctora',
-    img: doctorImg,
-    imgAlt: 'doctor',
-    boatImg: boatDoctorImg,
-    boatImgAlt: 'doctor dins de la barca',
-}
-];
+import './styles.scss'
+import { boatActivityText, RIGHT, LEFT, options } from './data';
 
 const ActivityBoat = ({ handleFinish }) => {
     const [firstColItems, setFirstColItems] = useState(options);
@@ -130,17 +89,12 @@ const ActivityBoat = ({ handleFinish }) => {
     const showError = errors && errors.includes(true);
     const showFinalButton = secondColItems.length === 4 && !showError;
 
-    console.log("items selected", itemsSelected);
 
     return (
-        <>
+        <div className="boatActivityContainer pb-3">
+
             <div className="p-2 d-flex align-items-center flex-column" >
-                <p className="w-50 p-3 text-justify" style={{ backgroundColor: '#f3f3f3' }}>{`
-            L'objectiu és aconseguir que tots els personatge creuin el riu, però el metge només pot
-            transportar un pacient per viatge. A més, el malalt no pot quedar-se sol amb cap dels dos
-            altres personatges sense el doctor present. Per tant, hauran de trobar la combinació
-            correcte per aconseguir atravessar el riu tots.`}
-                </p>
+                <p className="w-50 p-3 text-justify">{boatActivityText}</p>
             </div>
 
             <div className="mb-3">
@@ -149,16 +103,19 @@ const ActivityBoat = ({ handleFinish }) => {
                 )}
 
                 <div className="d-flex align-items-center justify-content-center">
-                    <Characters characters={firstColItems} clickable={direction === RIGHT} handleClick={addSelectedItem} />
+                    <div className="d-flex align-items-center justify-content-center flex-grow-5" >
+                        <Characters characters={firstColItems} clickable={direction === RIGHT} handleClick={addSelectedItem} showError={showError} />
 
-                    <div className="d-flex align-items-center">
-                        <BoatImage direction={direction} peopleOnBoat={itemsSelected} />
+                        <div className="d-flex align-items-center">
+                            <BoatImage direction={direction} peopleOnBoat={itemsSelected} />
+                        </div>
+                        <Characters characters={secondColItems} clickable={direction === LEFT} handleClick={addSelectedItem} showError={showError} />
                     </div>
-                    <Characters characters={secondColItems} clickable={direction === LEFT} handleClick={addSelectedItem} />
-
-                    {!showError &&
-                        <Button onClick={onSubmitTrip} className="ml-2">Fer aquest viatge</Button>
-                    }
+                    <div className="flex-grow-1">
+                        {!showError &&
+                            <Button onClick={onSubmitTrip} className="ml-2">Fer aquest viatge</Button>
+                        }
+                    </div>
                 </div>
             </div>
 
@@ -166,14 +123,14 @@ const ActivityBoat = ({ handleFinish }) => {
                 <div className="mt-3">
                     <Button onClick={() => resetGame()}>Reset</Button>
                     {showFinalButton &&
-                        <Button type="primary" onClick={handleFinalValidation} className="ml-2">
+                        <Button onClick={handleFinalValidation} className="ml-2">
                             RESOLDRE PROVA
                         </Button>
                     }
                 </div>
             }
             {showError && <ErrorsAlert errors={errors} handleGameReset={resetGame} />}
-        </>
+        </div>
     )
 }
 
@@ -185,7 +142,7 @@ const Trip = ({ firstColItems, secondColItems, boatItems, direction }) => {
         <div className="d-flex align-items-center justify-content-center my-2">
             <Characters characters={firstColItems} />
             <div className="ml-2">
-                <BoatImage direction={direction} style={{ border: 'solid 5px red' }} peopleOnBoat={boatItems} />
+                <BoatImage direction={direction} peopleOnBoat={boatItems} />
             </div>
             <Characters characters={secondColItems} />
 
@@ -193,12 +150,12 @@ const Trip = ({ firstColItems, secondColItems, boatItems, direction }) => {
     )
 }
 
-const Characters = ({ characters, clickable = false, handleClick }) => {
+const Characters = ({ characters, clickable = false, handleClick, showError }) => {
     return (
-        <div style={{ width: 400, minHeight: 120, border: `solid 2px ${clickable ? '#c0c0c7' : ''}`, backgroundColor: clickable ? '#efefef' : '' }} className="mx-3">
+        <div className={`charactersContainer mx-3 ${clickable && !showError ? 'clickable' : ''}`}>
             {characters.map(i =>
                 clickable ?
-                    <Button onClick={() => handleClick(i.id)} className="m-2 p-1 characterImg">
+                    <Button onClick={() => handleClick(i.id)} className="m-2 p-1 characterImg characterButton">
                         <img key={i.id} src={i.img} alt={i.imgAlt} className="h-100" />
                     </Button>
                     : <img key={i.id} src={i.img} alt={i.imgAlt} className="m-2 characterImg" />
