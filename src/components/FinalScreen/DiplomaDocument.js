@@ -1,31 +1,34 @@
 import React from 'react';
-import { Page, Text, View, Document, StyleSheet, Image } from '@react-pdf/renderer';
+import { Page, Text, View, Document, StyleSheet, Image, Font } from '@react-pdf/renderer';
 import logoImg from '../../assets/images/logos/logo.jpg';
-import cornerDesign from '../../assets/images/diploma/diplomaDecoration.png';
-import cornerDesign2 from '../../assets/images/diploma/diplomaDecoration2.png';
+import bgImage from '../../assets/images/diploma/bg.png';
+import vartaFontLight from '../../assets/images/diploma/varta font/Varta-Light.ttf';
+import vartaFontBold from '../../assets/images/diploma/varta font/Varta-SemiBold.ttf';
+
+Font.register({ family: 'VartaLight', src: vartaFontLight });
+Font.register({ family: 'VartaBold', src: vartaFontBold });
 
 // Create styles
 const styles = StyleSheet.create({
     page: {
         flexDirection: "column",
-        padding: 15
+        padding: 15,
     },
-    header: {
-        flexGrow: 5,
-        display: 'flex',
-        flexDirection: 'row',
-    },
-    footer: {
-        flexGrow: 5,
-        display: 'flex',
-        flexDirection: 'row',
-        justifyContent: 'flex-end'
+    pageBackground: {
+        position: 'absolute',
+        minWidth: '100%',
+        minHeight: '100%',
+        display: 'block',
+        height: '106%',
+        width: '104%',
     },
     centerImage: {
         alignSelf: "center",
-        flexGrow: 4
+        flexGrow: 1,
+        paddingTop: 50
     },
     body: {
+        paddingTop: 20,
         flexGrow: 2,
         marginTop: 20,
         textAlign: 'center',
@@ -36,36 +39,39 @@ const styles = StyleSheet.create({
     userNameText: {
         fontSize: 40,
         fontWeight: 900,
-        textDecoration: 'underline'
+        textDecoration: 'underline',
+        fontFamily: 'VartaBold',
     },
-    beforeText: { fontSize: 28 },
-    afterText: { fontSize: 15 },
+    beforeText: { fontSize: 26, fontFamily: 'VartaLight' },
+    afterText: { fontSize: 15, fontFamily: 'VartaLight' },
     body2: {
         marginLeft: 200,
         flexGrow: 1,
         display: 'flex',
         flexDirection: 'row',
-        justifyContent: 'space-between'
+        justifyContent: 'space-between',
+        fontFamily: 'VartaLight',
+
     },
     titleNameGroup: {
         flexGrow: 2,
-        flexDirection: 'column'
+        flexDirection: 'column',
+        width: '25%'
     },
-    titleText: { fontSize: 12 },
-    nameText: { fontSize: 9 },
+    titleText: { fontSize: 12, letterSpacing: 3 },
+    nameText: { fontSize: 9, letterSpacing: 1 },
 });
 
 // Create Document Component
 const DiplomaDocument = ({ userName }) => (
     <Document >
         <Page orientation='landscape' style={styles.page} size="A4">
-            <View style={styles.header}>
-                <Image src={cornerDesign} alt="disseny cantonada" />
-            </View>
-            <Image src={logoImg} style={styles.centerImage} alt="congrats image" />
+            <Image src={bgImage} style={styles.pageBackground} />
+            <Image src={logoImg} style={styles.centerImage} alt="logo reforma't image" />
+
             <View style={styles.body}>
                 <Text style={{ ...styles.text, ...styles.beforeText }}>Diploma otorgat a</Text>
-                <Text style={{ ...styles.text, ...styles.userNameText }}>{userName}</Text>
+                <Text style={{ ...styles.text, ...styles.userNameText }}>{` ${userName} `}</Text>
                 <Text style={{ ...styles.text, ...styles.afterText, paddingTop: 25 }}>En reconeixement a l'esforç personal i resposta positiva a l'hora de treballar en equip.</Text>
                 <Text style={{ ...styles.text, ...styles.afterText }}>Gràcies per participar en aquesta missió, tindrem en compte la vostra dedicació per a futures expedicions.</Text>
             </View>
@@ -78,9 +84,6 @@ const DiplomaDocument = ({ userName }) => (
                     <Text style={styles.titleText}>Maria Prieto, </Text>
                     <Text style={styles.nameText}>Directora de desenvolupament de projectes</Text>
                 </View>
-            </View>
-            <View style={styles.footer}>
-                <Image src={cornerDesign2} alt="disseny cantonada" />
             </View>
         </Page>
     </Document >

@@ -19,7 +19,7 @@ const FinalScreen = ({ userName }) => (
             `}
         </p>
         <div className="mt-2">
-            <PDFDownloadLink document={<DiplomaDocument userName={userName} />} fileName="Diploma.pdf">
+            <PDFDownloadLink document={<DiplomaDocument userName={userName} />} fileName="Diploma Reformat Scaperoom.pdf">
                 {({ blob, url, loading, error }) => (loading ? 'Creant diploma...' : 'Descarrega el diploma!')}
             </PDFDownloadLink>
         </div>
