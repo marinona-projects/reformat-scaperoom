@@ -5,8 +5,8 @@ import logoImg from '../assets/images/logos/logo.jpg';
 import moment from 'moment';
 
 const Header = ({ name, player }) => {
+    const countdownTime = moment().add(3, 'seconds');
     // const countdownTime = moment().add(1, 'hours');
-    const countdownTime = moment().add(5, 'seconds');
 
     const [countdown, setCountdown] = useState({
         hours: 0,
@@ -52,12 +52,14 @@ const Header = ({ name, player }) => {
         }
     }
 
-    const countdownText = `${countdown.hours || '0'}:${countdown.minutes || '00'}:${countdown.seconds || '00'}`
+    const subTitleText = countdown.hours >= 0 ?
+        <span>{`(Jugador número ${player}) ${countdown.hours || '0'}:${countdown.minutes || '00'}:${countdown.seconds || '00'}`}</span>
+        : <span style={{ color: 'red' }}>{`(Jugador número ${player}) ${Math.abs(countdown.seconds)}`}</span>
 
     return (
         <PageHeader
             title={name}
-            subTitle={`(Jugador número ${player}) ${countdownText}`}
+            subTitle={subTitleText}
             avatar={{ style: { backgroundColor: '#2a3f5d' }, icon: <UserOutlined /> }}
         >
             <img src={logoImg} alt="logo Reforma't Scaperoom" style={{ width: '20%' }} />
