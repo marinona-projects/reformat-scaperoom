@@ -25,7 +25,7 @@ const InitialForm = ({ onSubmit }) => (
                 Comença l’aventura…\r\n
                 Ens trobem a les portes de la seu de gestió d’informació més secreta del moment. \r
                 La primera pista que coneixem és que haureu de treballar en equip per aconseguir avançar de pis en pis.\r
-                La segona és que hi ha un gameMaster que ens farà de guia en tot moment. Bé, de guia i de policia perquè hi ha coses que no es poden fer:\r\n
+                La segona és que hi ha un TeacherMaster que ens farà de guia en tot moment. Bé, de guia i de policia perquè hi ha coses que no es poden fer:\r\n
             `}
         </p>
         <List
