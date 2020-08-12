@@ -5,8 +5,7 @@ import logoImg from '../assets/images/logos/logo.jpg';
 import moment from 'moment';
 
 const Header = ({ name, player }) => {
-    const countdownTime = moment().add(3, 'seconds');
-    // const countdownTime = moment().add(1, 'hours');
+    const countdownTime = moment().add(1, 'hours');
 
     const [countdown, setCountdown] = useState({
         hours: 0,
