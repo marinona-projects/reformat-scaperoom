@@ -1,12 +1,12 @@
 {
   "files": {
     "main.css": "/reformat-scaperoom/static/css/main.d3f89e44.chunk.css",
-    "main.js": "/reformat-scaperoom/static/js/main.aa9ef134.chunk.js",
+    "main.js": "/reformat-scaperoom/static/js/main.cf5e7180.chunk.js",
     "runtime-main.js": "/reformat-scaperoom/static/js/runtime-main.bef737e7.js",
     "static/css/2.001b80d1.chunk.css": "/reformat-scaperoom/static/css/2.001b80d1.chunk.css",
     "static/js/2.e38134ac.chunk.js": "/reformat-scaperoom/static/js/2.e38134ac.chunk.js",
     "index.html": "/reformat-scaperoom/index.html",
-    "precache-manifest.d8144872706174e00622e3490fd8d302.js": "/reformat-scaperoom/precache-manifest.d8144872706174e00622e3490fd8d302.js",
+    "precache-manifest.6b197ec90d08699d4ee6b0b8e6374bdb.js": "/reformat-scaperoom/precache-manifest.6b197ec90d08699d4ee6b0b8e6374bdb.js",
     "service-worker.js": "/reformat-scaperoom/service-worker.js",
     "static/js/2.e38134ac.chunk.js.LICENSE.txt": "/reformat-scaperoom/static/js/2.e38134ac.chunk.js.LICENSE.txt",
     "static/media/0.jpg": "/reformat-scaperoom/static/media/0.75c96f45.jpg",
@@ -38,6 +38,6 @@
     "static/css/2.001b80d1.chunk.css",
     "static/js/2.e38134ac.chunk.js",
     "static/css/main.d3f89e44.chunk.css",
-    "static/js/main.aa9ef134.chunk.js"
+    "static/js/main.cf5e7180.chunk.js"
   ]
 }
