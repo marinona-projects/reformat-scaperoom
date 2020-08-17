@@ -4,7 +4,8 @@ import { UserOutlined, HourglassOutlined } from '@ant-design/icons';
 import logoImg from '../assets/images/logos/logo.jpg';
 import moment from 'moment';
 
-const Header = ({ name, player }) => {
+const Header = ({ name, player, gameStep }) => {
+    const [tick, setTick] = useState(null)
     const countdownTime = moment().add(40, 'minutes');
     const countdownStartVal = {
         hours: 0,
@@ -13,8 +14,6 @@ const Header = ({ name, player }) => {
     }
 
     const [countdown, setCountdown] = useState(countdownStartVal);
-
-
 
     const updateCountdown = () => {
         if (countdownTime) {
@@ -54,9 +53,14 @@ const Header = ({ name, player }) => {
     };
 
     useEffect(() => {
-        const tick = setInterval(() => updateCountdown(), 1000);
+        setTick(setInterval(() => updateCountdown(), 1000))
         return () => clearInterval(tick)
     }, []);
+
+    //stop timer when game finished    
+    useEffect(() => {
+        if (tick && gameStep >= 5) clearInterval(tick)
+    }, [tick, gameStep])
 
     return (
         <PageHeader

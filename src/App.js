@@ -31,7 +31,7 @@ function App() {
     <div className="App">
       {userInfo &&
         <>
-          <Header {...userInfo} />
+          <Header {...userInfo} gameStep={currentGameNumber} />
           {currentGameNumber < 5 ?
             <>
               <Row>

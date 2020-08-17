@@ -32,13 +32,13 @@ const InitialForm = ({ onSubmit }) => (
             className="text-left"
             itemLayout="horizontal"
             dataSource={data}
-            renderItem={item => (
+            renderItem={item =>
                 <List.Item>
                     <List.Item.Meta
                         title={<span className="d-flex align-items-center listItem">{item.icon}{item.title}</span>}
                     />
                 </List.Item>
-            )}
+            }
         />
 
         <p className="text-justify" style={{ whiteSpace: 'pre-line' }}>{`

@@ -21,7 +21,7 @@ const ActivityMathProblem = ({ handleFinish }) => {
                 <img src={coronavirusGraphicImg} alt="gràfica coronavirus" className="w-100" />
                 <small>
                     {`Font de la gràfica i part del text: `}
-                    <a href="https://www.capgros.com/mataro/salut/evolucio-coronavirus-hospital-mataro-600-casos-mes_723648_102.html" target="_blank">
+                    <a href="https://www.capgros.com/mataro/salut/evolucio-coronavirus-hospital-mataro-600-casos-mes_723648_102.html" target="_blank" rel="noopener noreferrer">
                         Capgròs
                     </a>
                 </small>
@@ -86,13 +86,23 @@ const CoronavirusGraphic = () => {
             >
             </iframe>
             <div style={{ padding: '8px 0', fontFamily: 'Arial!important', fontSize: '13px!important', lineHeight: '15px!important', textAlign: 'center', borderTop: '1px solid #dadada', margin: '0 30px', width: '682px' }}>
-                <a href="https://infogram.com/b2de28fd-e011-408b-ab4c-1022bc920cd0" style={{ color: '#989898!important', textDecoration: 'none!important' }} target="_blank">
+                <a
+                    href="https://infogram.com/b2de28fd-e011-408b-ab4c-1022bc920cd0"
+                    style={{ color: '#989898!important', textDecoration: 'none!important' }}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
                     Coronavirus Mataro
                 </a>
                 <br />
-                <a href="https://infogram.com" style={{ color: '#989898!important', textDecoration: 'none!important' }} target="_blank" rel="nofollow">
+                <a
+                    href="https://infogram.com"
+                    style={{ color: '#989898!important', textDecoration: 'none!important' }}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
                     Infogram
-                    </a>
+                </a>
             </div>
         </div>
     )

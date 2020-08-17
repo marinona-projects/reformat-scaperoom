@@ -71,8 +71,9 @@ const ActivityOrderImages = ({ handleFinish }) => {
             )}
 
             <div className="d-flex align-items-center flex-row m-4">
-                {imagesInfo.map(img =>
+                {imagesInfo.map((img, key) =>
                     <ImageDescription
+                        key={key}
                         img={img}
                         highlighted={highlightedItem === img.id}
                         selectedImages={selectedImages}
@@ -160,7 +161,7 @@ const ImageDescription = ({ img, highlighted, selectedImages, showSizes }) => {
                             className="w-100"
                         />
                         <div className="overlay round d-flex align-items-center">
-                            <div class="text w-100 text-center">
+                            <div className="text w-100 text-center">
                                 <p>{actImage.name}</p>
                                 <p>{actImage.value}</p>
                             </div>
@@ -183,8 +184,8 @@ const ImageButton = ({ imgId, handleClick }) => {
     return (
         <Button onClick={() => handleClick(imgInfo.id)} className="m-2 p-0 cellButton" style={{ height: 150 }}>
             <img src={imgInfo.src} alt={imgInfo.name} className="h-100" />
-            <div class="overlay">
-                <div class="text">{imgInfo.name}</div>
+            <div className="overlay">
+                <div className="text">{imgInfo.name}</div>
             </div>
         </Button>
     )

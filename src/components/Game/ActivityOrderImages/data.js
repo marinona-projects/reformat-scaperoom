@@ -1,4 +1,6 @@
 
+import React from 'react';
+
 import img0 from '../../../assets/images/activity-order-images/0.jpg';
 import img0_wn from '../../../assets/images/activity-order-images/0wn.jpg';
 
@@ -50,7 +52,7 @@ export const imagesInfo = [
         operation: "+",
         src: img2,
         srcWithNumber: img2_wn,
-        value: "6x106 pm",
+        value: <span>6x10<sup>6</sup> pm</span>,
         response: 6,
         initialValue: undefined
     },
