@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState, useEffect } from 'react';
 import { PageHeader, Tag } from 'antd';
 import { UserOutlined, HourglassOutlined } from '@ant-design/icons';
 import logoImg from '../assets/images/logos/logo.jpg';
@@ -16,7 +16,7 @@ const Header = ({ name, player }) => {
 
 
 
-    const updateCountdown = useCallback(() => {
+    const updateCountdown = () => {
         if (countdownTime) {
             // Get the current time
             const currentTime = new Date().getTime();
@@ -51,12 +51,12 @@ const Header = ({ name, player }) => {
                 setCountdown({ hours: 0, minutes: 0, seconds: Math.floor(distanceToDate / 1000) });
             }
         }
-    }, [])
+    };
 
     useEffect(() => {
         const tick = setInterval(() => updateCountdown(), 1000);
         return () => clearInterval(tick)
-    }, [updateCountdown]);
+    }, []);
 
     return (
         <PageHeader
