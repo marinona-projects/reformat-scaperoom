@@ -1,24 +1,22 @@
-import React, { useState, useEffect } from 'react';
-import { PageHeader } from 'antd';
-import { UserOutlined } from '@ant-design/icons';
+import React, { useState, useEffect, useCallback } from 'react';
+import { PageHeader, Tag } from 'antd';
+import { UserOutlined, HourglassOutlined } from '@ant-design/icons';
 import logoImg from '../assets/images/logos/logo.jpg';
 import moment from 'moment';
 
 const Header = ({ name, player }) => {
     const countdownTime = moment().add(40, 'minutes');
-
-    const [countdown, setCountdown] = useState({
+    const countdownStartVal = {
         hours: 0,
-        minutes: 0,
+        minutes: '40',
         seconds: 0,
-    });
+    }
 
-    useEffect(() => {
-        const tick = setInterval(() => updateCountdown(), 1000);
-        return () => clearInterval(tick)
-    }, []);
+    const [countdown, setCountdown] = useState(countdownStartVal);
 
-    const updateCountdown = () => {
+
+
+    const updateCountdown = useCallback(() => {
         if (countdownTime) {
             // Get the current time
             const currentTime = new Date().getTime();
@@ -26,44 +24,67 @@ const Header = ({ name, player }) => {
             // Get the time remaining until the countdown date
             const distanceToDate = countdownTime - currentTime;
 
-            // Calculate days, hours, minutes and seconds remaining
-            let hours = Math.floor(
-                (distanceToDate % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60),
-            );
-            let minutes = Math.floor(
-                (distanceToDate % (1000 * 60 * 60)) / (1000 * 60),
-            );
-            let seconds = Math.floor((distanceToDate % (1000 * 60)) / 1000);
+            if (distanceToDate > 0) {
+                // Calculate days, hours, minutes and seconds remaining
+                let hours = Math.floor(
+                    (distanceToDate % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60),
+                );
+                let minutes = Math.floor(
+                    (distanceToDate % (1000 * 60 * 60)) / (1000 * 60),
+                );
+                let seconds = Math.floor((distanceToDate % (1000 * 60)) / 1000);
 
-            // For visual appeal, add a zero to each number that's only one digit
-            const numbersToAddZeroTo = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+                // For visual appeal, add a zero to each number that's only one digit
+                const numbersToAddZeroTo = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 
-            if (numbersToAddZeroTo.includes(hours)) {
-                hours = `0${hours}`;
-            } else if (numbersToAddZeroTo.includes(minutes)) {
-                minutes = `0${minutes}`;
-            } else if (numbersToAddZeroTo.includes(seconds)) {
-                seconds = `0${seconds}`;
+                if (numbersToAddZeroTo.includes(hours)) {
+                    hours = `0${hours}`;
+                } else if (numbersToAddZeroTo.includes(minutes)) {
+                    minutes = `0${minutes}`;
+                } else if (numbersToAddZeroTo.includes(seconds)) {
+                    seconds = `0${seconds}`;
+                }
+                // Set the state to each new time
+                setCountdown({ hours: hours, minutes, seconds });
+
+            } else {
+                setCountdown({ hours: 0, minutes: 0, seconds: Math.floor(distanceToDate / 1000) });
             }
-
-            // Set the state to each new time
-            setCountdown({ hours: hours, minutes, seconds });
         }
-    }
+    }, [])
 
-    const subTitleText = countdown.hours >= 0 ?
-        <span>{`(Jugador número ${player}) ${countdown.hours || '0'}:${countdown.minutes || '00'}:${countdown.seconds || '00'}`}</span>
-        : <span style={{ color: 'red' }}>{`(Jugador número ${player}) ${Math.abs(countdown.seconds)}`}</span>
+    useEffect(() => {
+        const tick = setInterval(() => updateCountdown(), 1000);
+        return () => clearInterval(tick)
+    }, [updateCountdown]);
 
     return (
         <PageHeader
             title={name}
-            subTitle={subTitleText}
+            subTitle={<SubtitleText player={player} countdown={countdown} />}
             avatar={{ style: { backgroundColor: '#2a3f5d' }, icon: <UserOutlined /> }}
         >
             <img src={logoImg} alt="logo Reforma't Scaperoom" style={{ width: '20%' }} />
         </PageHeader>
     )
 }
+
+const SubtitleText = ({ player, countdown }) => (
+    <>
+        <Tag><UserOutlined className="mr-1" />{player}</Tag>
+        <span>
+            {countdown.hours <= 0 && countdown.minutes <= 0 && countdown.seconds <= 0 ?
+                <span style={{ color: 'red' }}>
+                    <HourglassOutlined className="mr-1" />
+                    {Math.abs(countdown.seconds)}
+                </span>
+                : <span>
+                    <HourglassOutlined className="mr-1" />
+                    {`${countdown.hours || '0'}:${countdown.minutes || '00'}:${countdown.seconds || '00'}`}
+                </span>
+            }
+        </span>
+    </>
+)
 
 export default Header;

@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
-import _, { first } from 'lodash';
-import { Button, Form, InputNumber, Alert } from 'antd';
+import { Button, Form, InputNumber } from 'antd';
 import coronavirusGraphicImg from '../../../assets/images/activity-math-problem/graphicScreenshot.png';
 import { mathProblemText, solutions } from './data';
 import './styles.scss';

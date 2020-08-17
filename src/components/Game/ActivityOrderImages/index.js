@@ -146,8 +146,6 @@ const ImageDescription = ({ img, highlighted, selectedImages, showSizes }) => {
     const showImage = img.id < selectedImages.length;
     const actImage = imagesInfo.find(i => i.id === selectedImages[img.id]);
 
-    console.log("actImage: ", actImage)
-
     return (
         <div
             style={{ backgroundColor: highlighted ? '#FFF8ED' : 'white' }}

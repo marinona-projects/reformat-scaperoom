@@ -34,7 +34,6 @@ const Game = ({ numGame, handleFinish, userNumber }) => {
                     <ActivityOrderImages handleFinish={handleFinish} />
                 </>
             )
-            break;
         case 2:
             return (
                 <>
@@ -42,7 +41,6 @@ const Game = ({ numGame, handleFinish, userNumber }) => {
                     <ActivityMathProblem handleFinish={handleFinish} />
                 </>
             )
-            break;
         case 3:
             return (
                 <>
@@ -50,7 +48,6 @@ const Game = ({ numGame, handleFinish, userNumber }) => {
                     <ActivityBoat handleFinish={handleFinish} />
                 </>
             )
-            break;
         case 4:
             return (
                 <>
@@ -58,7 +55,6 @@ const Game = ({ numGame, handleFinish, userNumber }) => {
                     <ActivityImage handleFinish={handleFinish} userNumber={userNumber} />
                 </>
             )
-            break;
     }
 }
 

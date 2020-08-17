@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Button, Input, Alert, Form } from 'antd';
+import { Button, Input, Form } from 'antd';
 import { solutions, images } from './data';
 import './styles.scss'
 

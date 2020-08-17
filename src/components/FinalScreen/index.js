@@ -8,7 +8,7 @@ const FinalScreen = ({ userName }) => (
     <Row className="d-flex flex-column align-content-center">
         <h1>Missió completada!</h1>
         <div style={{ height: 180 }}>
-            <img src={imgFinal} className="h-100" />
+            <img src={imgFinal} className="h-100" alt="carpeta missió completada" />
         </div>
         <p className="w-50 text-justify mt-3" style={{ whiteSpace: 'pre-line' }}>
             {`Felicitats equip, aquesta expedició no era una tasca fàcil, només els equips que aconsegueixen 
